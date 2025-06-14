@@ -15,8 +15,8 @@ namespace HuntTheWumpus
 
     bool Pit::ObserveCaveEntrance(const std::shared_ptr<Denizen>& trigger)
     {
-        // Is the Denizen edible (true)
-        if (trigger->Properties().m_isEdible)
+        // Check if pit is fatal to hunter and denizen is hunter?
+        if (m_properties.m_fatalToHunter && trigger->GetIdentifier().m_category == Category::Hunter)
         {
             // Notify the hunter fell into a pit
             m_providers.m_notification.Notify(UserNotification::Notification::PitFall);

@@ -152,6 +152,16 @@ namespace HuntTheWumpus
         return std::ranges::find(tunnelIds, destinationCave) != tunnelIds.end();
     }
 
+    //void Dungeon::AddToCaveForTesting(const std::shared_ptr<Denizen>& denizen, int caveId, bool observeEntrance)
+    //{
+
+    //    AddToCave(denizen, caveId, observeEntrance);
+    //    /*m_caveDenizens.emplace(denizen->GetIdentifier(), denizen);
+    //    const auto& cave = m_caves.at(caveId);
+    //    denizen->EnterCave(cave);
+    //    cave->AddDenizen(denizen, observeEntrance);*/
+    //}
+
     void Dungeon::MakeMove(const DungeonMove operation, const std::vector<int>& destinationIds)
     {
         // First, find the hunter.

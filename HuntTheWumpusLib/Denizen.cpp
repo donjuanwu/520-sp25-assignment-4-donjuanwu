@@ -1,9 +1,8 @@
 #include "Denizen.h"
-
 #include <bit>
-#include <functional>
 #include <iostream>
 #include <limits>
+#include <unordered_map>
 
 namespace
 {
@@ -85,7 +84,6 @@ namespace HuntTheWumpus
             {Category::Pit, "Pit" },
             {Category::Wumpus, "Wumpus" }
         };
-
         out << valueMap[value];
         return out;
     }

@@ -79,11 +79,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="HuntTheWumpus.cpp" />
+    <ClCompile Include="UserNotificationPrinter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HuntTheWumpusLib\HuntTheWumpusLib.vcxproj">
       <Project>{0997d82d-fbb1-4700-9264-98ef703979e3}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UserNotificationPrinter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

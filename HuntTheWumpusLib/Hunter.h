@@ -23,6 +23,16 @@ namespace HuntTheWumpus
         std::shared_ptr<Arrow> GetArrow();
 
         [[nodiscard]] bool OutOfArrows() const { return m_arrows.empty(); }
+       
+        void SetArrowCount(int count)
+        {
+            m_arrows.clear(); // remove any existing arrows
+            for (int index = 0; index < count; ++index)
+            {
+                m_arrows.push_back(std::make_shared<Arrow>(index, m_providers)); // add new Arrow and initialized with a unique index and context
+            }
+        }
+
 
         Hunter(const Hunter&) = delete;
         Hunter(Hunter&&) = delete;

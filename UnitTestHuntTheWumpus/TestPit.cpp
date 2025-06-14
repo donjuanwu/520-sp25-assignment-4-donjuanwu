@@ -44,4 +44,21 @@ namespace TestHuntTheWumpus
         CHECK(env.m_state.m_gameOverCalled);
         CHECK(!env.m_state.m_gameOverResult);
     }
+
+    TEST(PitSuite, PitFellNotification_IsTriggered)
+    {
+        TestEnvironment env;
+
+        HuntTheWumpus::Pit pit(0, env.m_context);
+        const auto hunter = std::make_shared<HuntTheWumpus::Hunter>(env.m_context);
+
+        bool wasNotified = false;
+        env.m_context.m_notification.AddCallback(HuntTheWumpus::UserNotification::Notification::PitFall, [&wasNotified]()
+            {
+                wasNotified = true;
+            });
+
+        CHECK(pit.ObserveCaveEntrance(hunter));
+        CHECK(wasNotified);
+    }
 }

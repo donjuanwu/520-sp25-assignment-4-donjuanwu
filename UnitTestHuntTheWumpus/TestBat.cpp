@@ -5,8 +5,8 @@
 #include "Cave.h"
 #include "Hunter.h"
 #include "Wumpus.h"
-
 #include "TestHelperTestEnvironment.h"
+#include "UserNotification.h"  // Needed for Notification enum
 
 namespace TestHuntTheWumpus
 {
@@ -64,5 +64,26 @@ namespace TestHuntTheWumpus
 
         // Show that we get no action out of this.
         CHECK( !bat.ObserveCaveEntrance(wumpus));
+    }
+
+    TEST(BatSuite, Bat_TriggersBatRelocatedNotification)
+    {
+        TestEnvironment env;
+
+        HuntTheWumpus::Bat bat(0, env.m_context);
+        const auto cave = std::make_shared<HuntTheWumpus::Cave>(58, env.m_dungeon);
+        bat.EnterCave(cave);
+
+        const auto hunter = std::make_shared<HuntTheWumpus::Hunter>(env.m_context);
+        env.m_provider.SetCaveSequence({ 42 });
+
+        bool wasCalled = false;
+        env.m_context.m_notification.AddCallback(HuntTheWumpus::UserNotification::Notification::BatGrabbed, [&wasCalled]()
+            {
+                wasCalled = true;
+            });
+
+        CHECK(bat.ObserveCaveEntrance(hunter));
+        CHECK(wasCalled);
     }
 }

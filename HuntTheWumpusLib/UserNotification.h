@@ -20,6 +20,13 @@ namespace HuntTheWumpus
             BatGrabbed,
             WumpusBumped,
             WumpusEatsHunter,
+            /**
+             * @brief Notification triggered when the Wumpus is killed by an arrow.
+             *
+             * This notification is dispatched when the player successfully shoots
+             * the Wumpus. It can be used to inform the user interface, log an event,
+             * or trigger won behavior.
+             */
             WumpusShot,
             ArrowMissed,
             OutOfArrows,

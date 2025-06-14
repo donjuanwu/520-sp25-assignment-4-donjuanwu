@@ -23,13 +23,18 @@ namespace HuntTheWumpus
         Category m_category;
         int m_instance;
 
+        // Enable equality comparison
         bool operator==(const DenizenIdentifier &other) const = default;
-        std::strong_ordering operator <=>(const DenizenIdentifier &other) const;
+
+        // Enable sorting (not used by unordered_map but good for std::set or map)
+        std::strong_ordering operator <=>(const DenizenIdentifier& other) const;
+      
     };
 
+    // Hasher for using DenizenIdentifer as a key in unordered_map
     struct DenizenIdentifierHasher
     {
-        size_t operator()(const DenizenIdentifier &id) const;
+        size_t operator()(const DenizenIdentifier& id) const;
     };
 
     struct DenizenProperties

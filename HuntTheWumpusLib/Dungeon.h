@@ -1,9 +1,7 @@
 #pragma once
 
 #include "Denizen.h"
-
 #include "Cave.h"
-
 #include <memory>
 #include <unordered_map>
 #include <vector>
@@ -21,12 +19,14 @@ namespace HuntTheWumpus
     public:
         
         IDungeon() = default;
-        virtual ~IDungeon() = default;
+        
 
         virtual const std::shared_ptr<Cave> &FindCave(int caveId) = 0;
         virtual void Move(const DenizenIdentifier &identifier, int destinationCave) = 0;
         virtual void MoveDenizenRandomly( const DenizenIdentifier &identifier ) = 0;
 
+
+        virtual ~IDungeon() = default;
         IDungeon(const IDungeon &) = default;
         IDungeon(IDungeon &&) = default;
         IDungeon &operator=(const IDungeon &) = default;
@@ -47,6 +47,11 @@ namespace HuntTheWumpus
         void MakeMove(DungeonMove operation, const std::vector<int> &destinationIds);
         static bool LegalMove(const std::shared_ptr<Denizen> &denizen, int destinationCave);
 
+        //Add this for unit testing
+       // void AddToCaveForTesting(const std::shared_ptr<Denizen>&denizen, int caveId, bool observeEntrance = false);
+
+
+
         Dungeon(const Dungeon &) = delete;
         Dungeon(Dungeon &&) = delete;
         Dungeon &operator=(const Dungeon &) = delete;
@@ -62,6 +67,8 @@ namespace HuntTheWumpus
         void AddToCave(const std::shared_ptr<Denizen> &denizen, int caveId, bool observeEntrance);
 
         Context &m_providers;
+       
+        //std::unordered_map<HuntTheWumpus::DenizenIdentifier, std::shared_ptr<HuntTheWumpus::Denizen>, HuntTheWumpus::DenizenIdentifierHasher> m_caveDenizens;
         std::unordered_map<DenizenIdentifier, std::shared_ptr<Denizen>, DenizenIdentifierHasher> m_caveDenizens;
         std::unordered_map<int, std::shared_ptr<Cave>> m_caves;
     };
