@@ -1,7 +1,5 @@
 #include <TestHarness.h>
-
 #include "Bat.h"
-
 #include "Cave.h"
 #include "Hunter.h"
 #include "Wumpus.h"

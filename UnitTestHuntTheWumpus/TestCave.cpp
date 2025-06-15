@@ -1,10 +1,7 @@
 #include "Cave.h"
 #include "Dungeon.h"
-
 #include <TestHarness.h>
-
 #include "TestHelperTestEnvironment.h"
-
 #include <algorithm>
 
 namespace TestHuntTheWumpus

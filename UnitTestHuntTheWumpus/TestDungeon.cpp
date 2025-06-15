@@ -1,12 +1,10 @@
 #include <TestHarness.h>
-
 #include "Dungeon.h"
-
 #include "Cave.h"
-
 #include "Bat.h"
 #include "Pit.h"
 #include "Wumpus.h"
+#include "Arrow.h"
 
 #include "TestHelperTestEnvironment.h"
 

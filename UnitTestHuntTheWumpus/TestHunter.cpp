@@ -1,7 +1,5 @@
 #include <TestHarness.h>
-
 #include "Hunter.h"
-
 #include "Arrow.h"
 #include "Wumpus.h"
 

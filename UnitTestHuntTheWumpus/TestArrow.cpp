@@ -7,9 +7,6 @@
 #include "Wumpus.h"
 
 
-
-
-
 namespace TestHuntTheWumpus
 {
     TEST(ArrowSuite, Arrow_HasProperAttributes)

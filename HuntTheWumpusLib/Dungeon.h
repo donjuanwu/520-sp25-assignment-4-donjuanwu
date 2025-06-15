@@ -47,9 +47,8 @@ namespace HuntTheWumpus
         void MakeMove(DungeonMove operation, const std::vector<int> &destinationIds);
         static bool LegalMove(const std::shared_ptr<Denizen> &denizen, int destinationCave);
 
-        //Add this for unit testing
-       // void AddToCaveForTesting(const std::shared_ptr<Denizen>&denizen, int caveId, bool observeEntrance = false);
-
+        // Grants AddDenizenForSetup access to the privzte AddToCave() method
+        friend void AddDenizenForSetup(Dungeon& dungeon, const std::shared_ptr<Denizen>& denizen, int caveId);
 
 
         Dungeon(const Dungeon &) = delete;
@@ -72,4 +71,7 @@ namespace HuntTheWumpus
         std::unordered_map<DenizenIdentifier, std::shared_ptr<Denizen>, DenizenIdentifierHasher> m_caveDenizens;
         std::unordered_map<int, std::shared_ptr<Cave>> m_caves;
     };
+
+    // External declaration so AddDenizenForSetup can be used from main() and others
+    void AddDenizenForSetup(Dungeon& dungeon, const std::shared_ptr<Denizen>& denizen, int caveId);
 }

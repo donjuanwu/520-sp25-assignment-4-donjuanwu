@@ -1,2 +1,12 @@
-﻿  RandomProvider.cpp
+﻿  UserNotificationPrinter.cpp
+  Arrow.cpp
+  Bat.cpp
+  Cave.cpp
+  Dungeon.cpp
+  Hunter.cpp
+  Pit.cpp
+  Denizen.cpp
+  RandomProvider.cpp
+  UserNotification.cpp
+  Wumpus.cpp
   HuntTheWumpusLib.vcxproj -> D:\School\UW PCE\CppIntermediate\Assignment4\x64\Debug\HuntTheWumpusLib.lib

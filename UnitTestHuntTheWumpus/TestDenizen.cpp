@@ -1,9 +1,6 @@
 #include <TestHarness.h>
-
 #include "TestHelperTestEnvironment.h"
-
 #include "Denizen.h"
-
 #include "Bat.h"
 #include "Wumpus.h"
 #include "Pit.h"

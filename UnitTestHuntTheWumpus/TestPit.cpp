@@ -1,9 +1,6 @@
 #include <TestHarness.h>
-
 #include "Pit.h"
-
 #include "Hunter.h"
-
 #include "TestHelperTestEnvironment.h"
 
 namespace TestHuntTheWumpus
