@@ -4,7 +4,7 @@
 #include "Context.h"
 #include "Dungeon.h"
 #include "GameStateObservation.h"
-#include "RandomProvider.h"
+#include "IRandomProvider.h"
 #include "UserNotification.h"
 
 namespace HuntTheWumpus

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "RandomProvider.h"
+#include "IRandomProvider.h"
 #include <vector>
 
 namespace TestHuntTheWumpus

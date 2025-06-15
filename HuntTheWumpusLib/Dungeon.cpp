@@ -9,7 +9,7 @@
 #include "Arrow.h"
 
 #include "Context.h"
-#include "RandomProvider.h"
+#include "IRandomProvider.h"
 #include "GameStateObservation.h"
 
 // ReSharper disable once CppUnusedIncludeDirective

@@ -1,7 +1,7 @@
 
 #include "Context.h"
 #include "Dungeon.h"
-#include "RandomProvider.h"
+#include "IRandomProvider.h"
 #include "GameStateObservation.h"
 #include "UserNotification.h"
 
