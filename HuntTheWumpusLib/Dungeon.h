@@ -36,8 +36,8 @@ namespace HuntTheWumpus
     class Dungeon final : public IDungeon
     {
     public:
-
-        explicit Dungeon(Context &providers);
+        explicit Dungeon(Context& providers, bool setupDefaults = true);
+        //explicit Dungeon(Context &providers);
         ~Dungeon() override = default;
 
         const std::shared_ptr<Cave> &FindCave(int caveId) override;
@@ -60,7 +60,7 @@ namespace HuntTheWumpus
 
         void MoveDenizenRandomly( const std::shared_ptr<Denizen> &denizen );
 
-        void Initialize(Context &providers);
+        void Initialize(Context &providers, bool setupDefaults);
         void AddDenizen(const std::shared_ptr<Denizen> &newDenizen);
         void MakeTunnels() const;
         void AddToCave(const std::shared_ptr<Denizen> &denizen, int caveId, bool observeEntrance);

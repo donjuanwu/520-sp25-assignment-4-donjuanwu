@@ -20,7 +20,7 @@ namespace HuntTheWumpus
 		Add(notifier, UserNotification::Notification::NearbyWumpus, "The air smell foul a Wumpus must be nearby");
 		Add(notifier, UserNotification::Notification::OutOfArrows, "You shot your last arrow");
 		Add(notifier, UserNotification::Notification::PitFall, "You are free falling into a deep and dark pit");
-		Add(notifier, UserNotification::Notification::WumpusBumped, "A felt a furry body bumped into you");
+		Add(notifier, UserNotification::Notification::WumpusBumped, "Hunter felt a furry body bumped him");
 		Add(notifier, UserNotification::Notification::WumpusEatsHunter, "You just become the Wumpus dinner");
 		Add(notifier, UserNotification::Notification::WumpusShot, "You hear a scary scream... the Wumpus is dead!");
 	}

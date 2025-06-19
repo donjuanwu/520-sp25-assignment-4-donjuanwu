@@ -16,20 +16,28 @@
 
 namespace HuntTheWumpus
 {
-    Dungeon::Dungeon(Context& providers)
+    Dungeon::Dungeon(Context& providers, bool setupDefaults)
+        : m_providers(providers)
+    {
+        Initialize(providers, setupDefaults);
+    }
+   /* Dungeon::Dungeon(Context& providers)
         : m_providers(providers)
     {
         Initialize(providers);
-    }
+    }*/
 
-    void Dungeon::Initialize(Context& providers)
+    void Dungeon::Initialize(Context& providers, bool setupDefaults)
+    //void Dungeon::Initialize(Context& providers)
     {
+    
         for (auto idx = 1; idx <= 20; ++idx)
         {
             m_caves.emplace(idx, std::make_shared<Cave>(idx, *this));
         }
 
         MakeTunnels();
+        if (!setupDefaults) return;
 
         AddDenizen( std::make_shared<Bat>(0, m_providers) );
         AddDenizen( std::make_shared<Bat>(1, m_providers) );
@@ -39,7 +47,6 @@ namespace HuntTheWumpus
 
         // Put the hunter in a random  empty cave.
         auto hunterPlaced = false;
-
         while(!hunterPlaced)
         {
             const auto hunterCave = providers.m_random.MakeRandomCave();
