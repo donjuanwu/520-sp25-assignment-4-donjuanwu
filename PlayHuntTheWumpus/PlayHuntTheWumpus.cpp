@@ -87,5 +87,13 @@ int main()
     dungeon.MakeMove(HuntTheWumpus::DungeonMove::Move, { 3 });
     DisplayCurrentConnectedCaves(hunter);
 
+    // Trigger interaction: move Hunter into a non-connected cave, illegal action
+    std::cout << "\nHunter is now moving to cave 9..." << std::endl;
+    dungeon.MakeMove(HuntTheWumpus::DungeonMove::Move, { 9 });
+
+    // Trigger interaction: Hunter shoot an error
+    std::cout << "\nHunter is now shooting arrow through caves 5, 6, 7..." << std::endl;
+    dungeon.MakeMove(HuntTheWumpus::DungeonMove::Shoot, { 5, 6, 7 });
+
     return 0;
 }

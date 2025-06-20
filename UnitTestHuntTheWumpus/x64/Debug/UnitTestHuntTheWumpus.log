@@ -1,10 +1,1 @@
-﻿  TestArrow.cpp
-  TestBat.cpp
-  TestCave.cpp
-  TestDenizen.cpp
-  TestDungeon.cpp
-  TestHelperTestEnvironment.cpp
-  TestHunter.cpp
-  TestPit.cpp
-  TestWumpus.cpp
-  UnitTestHuntTheWumpus.vcxproj -> D:\School\UW PCE\CppIntermediate\Assignment4\x64\Debug\UnitTestHuntTheWumpus.exe
+﻿  UnitTestHuntTheWumpus.vcxproj -> D:\School\UW PCE\CppIntermediate\Assignment4\x64\Debug\UnitTestHuntTheWumpus.exe
